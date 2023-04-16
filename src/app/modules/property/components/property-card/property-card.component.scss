@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0.5em;
+  margin-top: 1em;
+  border: solid 1px #000;
+  width: 20%;
+}
+
+.property-info {
+  flex: 1;
+}
+
+.delete-area {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}

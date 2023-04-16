@@ -1,0 +1,18 @@
+<h1>Venda de propriedades</h1>
+<span
+  *ngIf="isLoading"
+  class="loading"
+>
+  Carregando...
+</span>
+<div *ngIf="!isLoading">
+  <span *ngIf="properties.length === 0">
+    Não há propriedades à venda.
+  </span>
+  <div *ngFor="let property of properties">
+    <app-property-card
+      [property]="property"
+      (deleteProperty)="deleteProperty($event)"
+    />
+  </div>
+</div>
