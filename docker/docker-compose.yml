@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web-dev:
+    container_name: property-sale-dev
+    image: property-sale-web
+    build: .
+    ports:
+      - 4200:4200
+    # command: sh -c "npm install && "
+    tty: true
+    user: node
+    volumes:
+      - ..:/usr/src/app
+    environment:
+      - NG_CLI_ANALYTICS=false
