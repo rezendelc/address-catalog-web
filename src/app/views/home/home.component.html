@@ -6,13 +6,16 @@
   Carregando...
 </span>
 <div *ngIf="!isLoading">
-  <span *ngIf="properties.length === 0">
+  <span *ngIf="imoveis.length === 0">
     Não há propriedades à venda.
   </span>
-  <div *ngFor="let property of properties">
+  <div
+    *ngFor="let imovel of imoveis"
+    class="card-list"
+  >
     <app-property-card
-      [property]="property"
-      (deleteProperty)="deleteProperty($event)"
+      [imovel]="imovel"
+      (goToImovel)="goToImovelDetail($event)"
     />
   </div>
 </div>

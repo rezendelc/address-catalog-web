@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { PropertyModule } from 'src/app/modules/property/property.module';
+import { ImovelModule } from 'src/app/modules/imovel/imovel.module';
 
 const ownModules = [
-  PropertyModule,
+  ImovelModule
 ]
 
 const materialModules = [

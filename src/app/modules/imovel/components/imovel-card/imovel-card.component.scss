@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: solid 1px #000;
+  max-width: 16em;
+  max-height: 16em;
+}
+
+.card:hover {
+  background-color: rgba(66, 255, 59, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}

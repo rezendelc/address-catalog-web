@@ -3,8 +3,8 @@ version: '3'
 
 services:
   web-dev:
-    container_name: property-sale-dev
-    image: property-sale-web
+    container_name: address-catalog-dev
+    image: address-catalog-web
     build: .
     ports:
       - 4200:4200

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PropertyCardComponent } from './components/property-card/property-card.component';
+import { ImovelCardComponent } from './components/imovel-card/imovel-card.component';
 
 @NgModule({
   declarations: [
-    PropertyCardComponent,
+    ImovelCardComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    PropertyCardComponent
+    ImovelCardComponent
   ]
 })
-export class PropertyModule { }
+export class ImovelModule { }

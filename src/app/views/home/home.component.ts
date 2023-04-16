@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { Property } from 'src/app/models/property';
-import { PropertyService } from 'src/app/services/property/property.service';
+import { Imovel } from 'src/app/models/imovel';
+import { ImovelService } from 'src/app/services/imovel/imovel.service';
 
 @Component({
   selector: 'app-home',
@@ -12,42 +13,29 @@ import { PropertyService } from 'src/app/services/property/property.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   isLoading: boolean = true;
-  properties: Property[] = [];
+  imoveis: Imovel[] = [];
   
   // Using a list of subscriptions, just in case the component is destroyed
   // e.g. logout in middle of request, we cancel the subscription, to avoid data leak
   subscriptions: Subscription[] = [];
 
   constructor(
-    private propertyService: PropertyService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private imovelService: ImovelService
   ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.propertyService.getAll().subscribe(data => {
-        setTimeout(() => {
-          this.properties = data;
-          this.isLoading = false;
-        }, 2000)
+      this.imovelService.getAll().subscribe(res => {
+        this.imoveis = res;
+        this.isLoading = false;
       })
     )
   }
 
-  deleteProperty(id: string) {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.subscriptions.push(
-        this.propertyService.delete(id).subscribe(res => {
-          console.log(res.message);
-        })
-      )
-      this.subscriptions.push(
-        this.propertyService.getAll().subscribe(data => {
-          this.properties = data;
-          this.isLoading = false;
-        })
-      )
-    }, 1000)
+  goToImovelDetail(id: number) {
+    this.router.navigate([id], { relativeTo: this.route });
   }
 
   ngOnDestroy(): void {
