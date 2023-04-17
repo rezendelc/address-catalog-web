@@ -1,0 +1,52 @@
+<span *ngIf="isLoading">Carregando...</span>
+<div *ngIf="!isLoading">
+  <form [formGroup]="imovelForm" class="form">
+
+    <div class="form-input">
+      <label>Nome:</label>
+      <input type="text" formControlName="nome" placeholder="Nome">
+    </div>
+
+    <div class="form-input">
+      <label>Tipo:</label>
+      <input type="text" formControlName="tipo" placeholder="Tipo">
+    </div>
+
+    <div class="form-input">
+      <label>Valor:</label>
+      <input type="number" formControlName="valor" placeholder="Valor">
+    </div>
+
+    <div class="form-input">
+      <label>Condomínio:</label>
+      <input type="number" formControlName="condominio" placeholder="Condomínio">
+    </div>
+
+    <div class="form-input">
+      <label>Quartos:</label>
+      <input type="number" formControlName="quartos" placeholder="Quartos">
+    </div>
+
+    <div class="form-input">
+      <label>Banheiros:</label>
+      <input type="number" formControlName="banheiros" placeholder="Banheiros">
+    </div>
+
+    <div class="form-input">
+      <label>Área:</label>
+      <input type="number" formControlName="area" placeholder="Área">
+    </div>
+
+    <div class="form-input">
+      <label>Data de Anuncio:</label>
+      <input type="date" formControlName="dataAnuncio" placeholder="Data Anuncio">
+    </div>
+
+  </form>
+  <button
+    (click)="goBack()"
+    class="back-button"
+  >
+    Voltar
+  </button>
+</div>

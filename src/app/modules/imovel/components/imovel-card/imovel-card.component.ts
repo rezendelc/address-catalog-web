@@ -10,13 +10,6 @@ export class ImovelCardComponent {
   @Input('imovel') imovel: Imovel;
   @Output('goToImovel') goToImovel: EventEmitter<number> = new EventEmitter;
 
-  constructor() {
-  }
-
-  ngOnInit() {
-    console.log(this.imovel)
-  }
-
   clickImovel() {
     this.goToImovel.emit(this.imovel.id);
   }

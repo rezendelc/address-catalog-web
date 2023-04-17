@@ -21,6 +21,10 @@ export class ImovelService {
     return this.http.get<Imovel[]>(`${this.url}/${this.route}`);
   }
 
+  getById(id: number) {
+    return this.http.get<Imovel>(`${this.url}/${this.route}/${id}`);
+  }
+
   post() {
 
   }
