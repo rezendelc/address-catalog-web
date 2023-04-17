@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     )
   }
 
-  goToImovelDetail(id: number) {
+  goToImovelDetail(id: number | string) {
     this.router.navigate([id], { relativeTo: this.route });
   }
 

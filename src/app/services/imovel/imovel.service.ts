@@ -25,15 +25,25 @@ export class ImovelService {
     return this.http.get<Imovel>(`${this.url}/${this.route}/${id}`);
   }
 
-  post() {
-
+  post(body: any) {
+    // const body = this.createBodyRequest(form);
+    return this.http.post<Imovel>(`${this.url}/${this.route}/`, body);
   }
 
-  put() {
-
+  put(body: any) {
+    // const body = this.createBodyRequest(form);
+    return this.http.put<Imovel>(`${this.url}/${this.route}/`, body);
   }
 
   delete(id: string) {
-    return 0
+    return this.http.delete<Imovel>(`${this.url}/${this.route}/${id}`);
+  }
+
+  createBodyRequest(form: any) {
+    const body = {};
+    form.forEach((input: any) => {
+      
+    })
+    return body;
   }
 }

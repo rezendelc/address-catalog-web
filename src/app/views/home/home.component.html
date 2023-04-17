@@ -1,4 +1,10 @@
 <h1>Venda de propriedades</h1>
+<button 
+  *ngIf="!isLoading"
+  (click)="goToImovelDetail('new')"
+>
+  Criar novo imóvel
+</button>
 <span
   *ngIf="isLoading"
   class="loading"

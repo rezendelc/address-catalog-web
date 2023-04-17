@@ -1,5 +1,8 @@
 <span *ngIf="isLoading">Carregando...</span>
 <div *ngIf="!isLoading">
+  <h1 *ngIf="!imovel">Novo imóvel</h1>
+  <h1 *ngIf="imovel">{{ imovel.nome }}</h1>
+
   <form [formGroup]="imovelForm" class="form">
 
     <div class="form-input">
@@ -41,12 +44,15 @@
       <label>Data de Anuncio:</label>
       <input type="date" formControlName="dataAnuncio" placeholder="Data Anuncio">
     </div>
-
   </form>
+  
   <button
     (click)="goBack()"
     class="back-button"
   >
     Voltar
   </button>
+  <button *ngIf="!imovel" (click)="createNewImovel()">Criar novo</button>
+
+  <p *ngIf="cepJson">Endereço: {{ cepJson }}</p>
 </div>
